@@ -1,0 +1,55 @@
+# [Two Sum](https://leetcode.com/problems/two-sum/)
+## Discription
+```
+Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+```
+
+## Examples
+```
+Given nums = [2, 7, 11, 15], target = 9,
+
+Because nums[0] + nums[1] = 2 + 7 = 9,
+return [0, 1].
+```
+
+## Strategy
+### Strategy 1
+The first and easiest thought was to use nested loop to iterate through all the elements. 
+It is obviously a doable solution, with time coplexity of O(n<sup>2</sup>), which is not ideal.
+
+### Strategy 2
+**You can always consider optimize the searching step!**
+
+C++, Java, Python and a lot of languages provide easy ready-to-use ways to search in O(log(n)) time. Basically instead of iterating over all the elements 
+again in order to find the one, we could try to trade space for time, by storing the array into another data structure that comes with fast look up. 
+And here we could use std::unordered_map.
+
+|   | map  | unordered_map 
+:---:|:----:|:----:
+Ordering        | increasing  order   | no ordering
+Implementation  | Self balancing BST, like Red-Black Tree  | Hash Table
+Search time     | log(n)              | O(1) -> Average, O(n) -> Worst Case
+Insertion time  | log(n) + Rebalance  | Same as search
+Deletion time   | log(n) + Rebalance  | Same as search
+
+Since we don't really need the elements to be orederd, we could use unordered_map in this case for faster search time. 
+
+## Code
+```c++
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int, int> map;
+        for (int i = 0; i < nums.size(); i++)
+            map[nums[i]] = i;
+        for (int i = 0; i < nums.size(); i++) {
+            auto result = map.find(target - nums[i]);
+            if (result != map.end() && result->second != i)
+                return vector<int> {i, result->second};
+        }
+        return vector<int>();
+    }
+};
+```
