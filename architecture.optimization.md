@@ -1,5 +1,8 @@
 https://www.kaggle.com/cdeotte/how-to-choose-cnn-architecture-mnist
 
+
+https://www.kaggle.com/michael422/spectrogram-convolution
+
 ## Notation
 Throughout this file, I'll use the following notation:
 
