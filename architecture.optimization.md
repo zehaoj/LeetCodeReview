@@ -1,5 +1,6 @@
 https://www.kaggle.com/cdeotte/how-to-choose-cnn-architecture-mnist
 
+https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html
 
 https://www.kaggle.com/michael422/spectrogram-convolution
 
