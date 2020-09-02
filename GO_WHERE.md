@@ -1,13 +1,14 @@
 ## Reacher
-* ETH
 * EFPL
 * Cambridge
 * Oxford
 
 ## Suitable
-* IC
 * Waterloo
+* IC
 * U of T
+* UCL
 
 ## Safty
 * KTH
+* Edinburgh
